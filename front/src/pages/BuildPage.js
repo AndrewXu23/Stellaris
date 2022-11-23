@@ -108,7 +108,10 @@ function BuildPage() {
       <div className="BuildPage">
         <h1>Build your universe!</h1>
         <audio src={MyMusic} controls>
-          <p>If you are reading this, it is because your browser does not support the audio element.</p>
+          <p>
+            If you are reading this, it is because your browser does not support
+            the audio element.
+          </p>
         </audio>
         <div>
           <p>
@@ -131,12 +134,18 @@ function BuildPage() {
             </label>
           </form>
           <h3>Click to modify CO2 level:</h3>
-          <p>Carbon dioxide generated from ancient volcano warms this planet. And further generate Ozone layer to protect life.</p>
+          <p>
+            Carbon dioxide generated from ancient volcano warms this planet. And
+            further generate Ozone layer to protect life.
+          </p>
           <Element name="CO2" initialValue={N_value} />
           <button onClick={() => setNValue(N_value + 1)}>Increase CO2</button>
           <button onClick={() => setNValue(N_value - 1)}>Decrease CO2</button>
           <h3>Click to modify Amino Acid level:</h3>
-          <p>Atoms react with moleculars to form the amino acid, as an organic compunds, amino acid combined together to form protein.</p>
+          <p>
+            Atoms react with moleculars to form the amino acid, as an organic
+            compunds, amino acid combined together to form protein.
+          </p>
           <Element name="Amino Acid" initialValue={O_value} />
           <button onClick={() => setOValue(O_value + 1)}>
             Increase Amino Acid
@@ -145,7 +154,10 @@ function BuildPage() {
             Decrease Amino Acid
           </button>
           <h3>Click to modify Nucleotide level:</h3>
-          <p>Nucleotide is the keystone element to construct DNA and RNA, ususally formed at prebiotic soup step.</p>
+          <p>
+            Nucleotide is the keystone element to construct DNA and RNA,
+            ususally formed at prebiotic soup step.
+          </p>
           <Element name="Nucleotide" initialValue={Cell_value} />
           <button onClick={() => setCellValue(Cell_value + 1)}>
             Increase Nucleotide
@@ -154,7 +166,11 @@ function BuildPage() {
             Decrease Nucleotide
           </button>
           <h3>Click to modify Nucleus level:</h3>
-          <p>The nucleus is a unique cell structure of eukaryotic cells. The DNA inside the nucleus is complexed with various proteins and a small amount of mRNA to form chromatin. </p>
+          <p>
+            The nucleus is a unique cell structure of eukaryotic cells. The DNA
+            inside the nucleus is complexed with various proteins and a small
+            amount of mRNA to form chromatin.{" "}
+          </p>
           <Element name="nucleus" initialValue={Nucleus_value} />
           <button onClick={() => setNucleusValue(Nucleus_value + 1)}>
             Increase Nucleus
@@ -172,7 +188,10 @@ function BuildPage() {
             Decrease mitochondria
           </button>
           <h3>Click to modify Mitosis level:</h3>
-          <p>Mitosis is the mechanism for cells to reproduce, the two mitosis are asexual reproduction and sexual reproduction.</p>
+          <p>
+            Mitosis is the mechanism for cells to reproduce, the two mitosis are
+            asexual reproduction and sexual reproduction.
+          </p>
           <Element name="mitosis" initialValue={mitosis_value} />
           <button onClick={() => setmitosisValue(mitosis_value + 1)}>
             Increase mitosis
