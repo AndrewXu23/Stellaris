@@ -1,0 +1,17 @@
+.bottom-img{
+    width: 100;
+}
+
+
+.img-fluid{
+    height: 300px;
+    width: 300px;
+}
+
+.IndexPage{
+    background-image: url("../images/image0.gif");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding-top: 20%;
+}
