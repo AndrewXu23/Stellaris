@@ -4,6 +4,8 @@ import BasePage from "./BasePage.js";
 import MyImage from "../images/andrew.png";
 import YutingImage from "../images/yuting.png";
 
+// Would be nice to style the images so users don't have to scroll so far to see everything.
+
 function AboutPage() {
   return (
     <BasePage>
@@ -15,7 +17,7 @@ function AboutPage() {
           </p>
         </div>
         <div>
-          <img src={MyImage} alt="Zihan" />
+          <img src={MyImage} alt="Screenshot of Zihan's Github" />
         </div>
         <div>
           <p>
@@ -23,7 +25,7 @@ function AboutPage() {
           </p>
         </div>
         <div>
-          <img src={YutingImage} alt="Yuting" />
+          <img src={YutingImage} alt="Screenshot of Yuting's Github" />
         </div>
       </div>
     </BasePage>

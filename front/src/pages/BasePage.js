@@ -6,6 +6,9 @@ import NavBar from "./NavBar.js";
 import Footer from "./Footer.js";
 import "./BasePage.css";
 
+// good use of classNames.
+// Good thinking to have a BasePage component!
+
 function BasePage({children}) {
     return (
         <div className="BasePage">

@@ -1,3 +1,5 @@
+// This should be in the components folder
+
 // This page is finished by Zihan Xu.
 import React from "react";
 // import PropTypes from "prop-types";

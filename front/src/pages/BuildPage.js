@@ -39,6 +39,7 @@ async function handleBuild(
     .then((result) => {
       console.log(result);
     });
+    // Might be good to chain a .catch in case of errors
 }
 
 async function handleUpdate(
@@ -78,6 +79,7 @@ async function handleUpdate(
 
 async function handleDelete(Universe_name, Builder_name) {
   const requestOptions = {
+    // Good use of delete!
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

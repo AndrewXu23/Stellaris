@@ -4,6 +4,8 @@ import React from "react";
 
 import BasePage from "./BasePage.js";
 
+// This component was a good idea!
+
 function ErrorPage() {
   return (
     <BasePage>

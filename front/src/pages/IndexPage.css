@@ -1,12 +1,13 @@
 .bottom-img{
+    /* I don't think this is working, but I don't know why not */
     width: 100;
 }
 
-
-.img-fluid{
+/* There's no img-fluid on the page 8?
+/* .img-fluid{
     height: 300px;
     width: 300px;
-}
+} */
 
 .IndexPage{
     background-image: url("../images/image0.gif");
@@ -14,4 +15,7 @@
     background-repeat: no-repeat;
     color: #fff;
     padding-top: 20%;
+
+    /* This does what I think you wanted to do with the bottom-img rule above */
+    overflow-x: hidden;
 }
