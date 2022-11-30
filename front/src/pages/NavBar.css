@@ -6,7 +6,7 @@
 }
 
 .NavBar{
-    background-image: url("../images/image0.gif");
+    /* background-image: url("../images/image0.gif"); */
     background-size: "cover";
     background-repeat: no-repeat;
     padding: 0 !important;

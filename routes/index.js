@@ -19,6 +19,7 @@ router.get("/listings", async function (req, res, next) {
     res.status(200).json(universes);
   } catch (e) {
     console.log("Error in db", e);
+    // Good informative response.
     res.status(300).json({
       universes: [],
       msg: "Error in the query",
@@ -75,6 +76,9 @@ router.post("/listings/record", async function (req, res, next) {
 
     Final: "",
   };
+
+  // It might be nice to put this in a separate function like getPlaneResult()
+  // that you could call to make the code more clear and could be reused by the update route.
   if (matchDocument.dist_value === false) {
     if (matchDocument.gravity_value === true) {
       matchDocument.Final =
@@ -122,9 +126,11 @@ router.post("/listings/record", async function (req, res, next) {
     universe: req.body.name,
   };
   try {
+    // Using names like planetDocument and userDocument would make the code more clear.
     await myDB.insertUniverse(matchDocument);
     await myDB.insertBuilder(matchDocument2);
     console.log("Added a new element!");
+    // It's cool that you're explicitely setting the status!
     res.status(204).send();
   } catch (e) {
     console.log("Error in db", e);
@@ -199,6 +205,7 @@ router.post("/listings/update", async function (req, res, next) {
   }
 });
 
+// Good use of the delete method!
 router.delete("/listings/delete", async function (req, res, next) {
   console.log("delete data");
   const matchDocument = {

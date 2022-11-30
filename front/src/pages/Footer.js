@@ -1,6 +1,8 @@
+// This should be in the components folder
+
 // This page is finshed by Zihan Xu.
 import React from "react";
-import "./Footer.css"
+import "./Footer.css";
 // import PropTypes from "prop-types";
 
 function Footer() {

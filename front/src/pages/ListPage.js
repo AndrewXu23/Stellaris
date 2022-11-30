@@ -9,7 +9,7 @@ function ListPage() {
   return (
     <BasePage>
       <div>
-        <img src={MyImage} alt="example" />
+        <img src={MyImage} alt="example planet results: frozen, plant, earth-like, no-life, satellite (moon)" />
       </div>
       <div className="ListPage">
         <h1>Universes List (Check out your result with planets above!)</h1>

@@ -5,13 +5,20 @@
 // The functions that are related to the collection "builder" are finished by Zihan,
 // which are insertBuilders, deleteBuilders, and getBuilders.
 
+// I'd recommend separating the universe collection functions and builder collection fuctions
+// into separate files.
+
 import { MongoClient } from "mongodb";
 
 function MyMongoDB() {
   const myDB = {};
   const url =
     process.env.ATLAS_URI ||
-    "mongodb+srv://kelly:QUKGeA3kxOndEb62@cluster0.aknyknz.mongodb.net/?retryWrites=true&w=majority";
+    // You don't want to expose your credentials for mongo. (you might want to talk to the prof/tas about
+    // rebasing your branch to delete it from your commit history.)
+    // Put that url in the .env file (which I think you've done) and then have this one here so someone
+    // can connect to their own local mongo connection, but can't exploit your secure one.
+    "mongodb://localhost:27017";
   const DB_NAME = "project3";
   const DON_COL_NAME = "universe";
 
@@ -44,6 +51,8 @@ function MyMongoDB() {
       const colUniverses = client.db(DB_NAME).collection(DON_COL_NAME);
       console.log("insertUniverse running query");
       await colUniverses.insertOne(matchDocument);
+      // It would be nice to have a descriptive response returned from all your functions
+      // to confirm the success of the operation for the caller.
     } catch (e) {
       console.log("insertUniverse error", e);
       throw e;
@@ -114,13 +123,16 @@ function MyMongoDB() {
       console.log("insertBuilder running query");
       // check if the builder is already there
       const query = { builder: matchDocument2.builder };
+      // Even though you're only going to get an array of length 0 or 1,
+      // it might be safer to use findOne instead, just in case.
+      // You could use upsert instead of find and then insert/update.
       const tmp = await colBuilder.find(query).toArray();
       console.log(tmp.length);
-      if(tmp.length === 0){
+      if (tmp.length === 0) {
         console.log("insert to builder");
         matchDocument2.universe = [matchDocument2.universe];
         await colBuilder.insertOne(matchDocument2);
-      } else{
+      } else {
         const oldUniverse = tmp[0]["universe"];
         oldUniverse.push(matchDocument2.universe);
         const listingQuery = {
@@ -128,12 +140,11 @@ function MyMongoDB() {
         };
         const update = {
           $set: {
-            universe: oldUniverse
+            universe: oldUniverse,
           },
         };
         await colBuilder.updateOne(listingQuery, update);
       }
-      
     } catch (e) {
       console.log("insertBuilder error", e);
       throw e;
@@ -143,6 +154,7 @@ function MyMongoDB() {
     }
   };
 
+  // This deletes the universe, not the builder
   myDB.deleteBuilder = async function (matchDocument2) {
     let client;
     console.log("deleteBuilder");
@@ -154,20 +166,21 @@ function MyMongoDB() {
       const query = { builder: matchDocument2.builder };
       const tmp = await colBuilder.find(query).toArray();
       console.log(tmp.length);
-      if(tmp.length > 0){
+      if (tmp.length > 0) {
         let oldUniverse = tmp[0]["universe"];
-        oldUniverse = oldUniverse.filter(item => item !== matchDocument2.name);
+        oldUniverse = oldUniverse.filter(
+          (item) => item !== matchDocument2.name
+        );
         const listingQuery = {
           builder: matchDocument2.builder,
         };
         const update = {
           $set: {
-            universe: oldUniverse
+            universe: oldUniverse,
           },
         };
         await colBuilder.updateOne(listingQuery, update);
       }
-      
     } catch (e) {
       console.log("deleteBuilder error", e);
       throw e;
