@@ -15,6 +15,8 @@ function List() {
       });
   }, []);
 
+  //A table inplace of a list would help display the data much better
+  //you can do the mapping in a new function and call that function in <tbody> tag.
   return (
     <ul>
       {Array.isArray(listings)
