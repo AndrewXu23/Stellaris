@@ -4,5 +4,8 @@
     bottom: 0;
     width: 100%;
     height: 40px;
-    background: grey;
+    background-color: #5d98d8;
+    color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }

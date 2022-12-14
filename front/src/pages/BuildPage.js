@@ -106,125 +106,327 @@ function BuildPage() {
   return (
     <BasePage>
       <div className="BuildPage">
-        <h1>Build your universe!</h1>
+        <h1>☀️Build your universe!🔨</h1>
         <audio src={MyMusic} controls>
-          <p>
+          <div className="alert alert-dark text" role="alert">
             If you are reading this, it is because your browser does not support
             the audio element.
-          </p>
+          </div>
         </audio>
-        <div>
-          <p>
-            Input the conditions you designed for your universe. Submit it and a
-            universe will be created if the conditions are satisfied.
-          </p>
+        <div className="alert alert-dark text" role="alert">
+          Input the conditions you designed for your universe. Submit it and a
+          universe will be created if the conditions are satisfied.
         </div>
         <div>
           <img src={MyImage} alt="me" />
         </div>
         <div className="BuildForm">
-          <form>
-            <label>
+          <div className="mb-3 box">
+            <label
+              for="formUniverseNameInput"
+              className="form-label orange-text"
+            >
               Enter universe name:
-              <input
-                type="text"
-                value={Universe_name}
-                onChange={(e) => setUniverseName(e.target.value)}
-              />
             </label>
-          </form>
-          <h3>Click to modify CO2 level:</h3>
-          <p>
-            Carbon dioxide generated from ancient volcano warms this planet. And
-            further generate Ozone layer to protect life.
-          </p>
-          <Element name="CO2" initialValue={N_value} />
-          <button onClick={() => setNValue(N_value + 1)}>Increase CO2</button>
-          <button onClick={() => setNValue(N_value - 1)}>Decrease CO2</button>
-          <h3>Click to modify Amino Acid level:</h3>
-          <p>
-            Atoms react with moleculars to form the amino acid, as an organic
-            compunds, amino acid combined together to form protein.
-          </p>
-          <Element name="Amino Acid" initialValue={O_value} />
-          <button onClick={() => setOValue(O_value + 1)}>
-            Increase Amino Acid
-          </button>
-          <button onClick={() => setOValue(O_value - 1)}>
-            Decrease Amino Acid
-          </button>
-          <h3>Click to modify Nucleotide level:</h3>
-          <p>
-            Nucleotide is the keystone element to construct DNA and RNA,
-            ususally formed at prebiotic soup step.
-          </p>
-          <Element name="Nucleotide" initialValue={Cell_value} />
-          <button onClick={() => setCellValue(Cell_value + 1)}>
-            Increase Nucleotide
-          </button>
-          <button onClick={() => setCellValue(Cell_value - 1)}>
-            Decrease Nucleotide
-          </button>
-          <h3>Click to modify Nucleus level:</h3>
-          <p>
-            The nucleus is a unique cell structure of eukaryotic cells. The DNA
-            inside the nucleus is complexed with various proteins and a small
-            amount of mRNA to form chromatin.{" "}
-          </p>
-          <Element name="nucleus" initialValue={Nucleus_value} />
-          <button onClick={() => setNucleusValue(Nucleus_value + 1)}>
-            Increase Nucleus
-          </button>
-          <button onClick={() => setNucleusValue(Nucleus_value - 1)}>
-            Decrease Nucleus
-          </button>
-          <h3>Click to modify Mitochondria level:</h3>
-          <p>Mitochondria are the main site of cellular aerobic respiration.</p>
-          <Element name="mitochondria" initialValue={mitochondria_value} />
-          <button onClick={() => setmitochondriaValue(mitochondria_value + 1)}>
-            Increase mitochondria
-          </button>
-          <button onClick={() => setmitochondriaValue(mitochondria_value - 1)}>
-            Decrease mitochondria
-          </button>
-          <h3>Click to modify Mitosis level:</h3>
-          <p>
-            Mitosis is the mechanism for cells to reproduce, the two mitosis are
-            asexual reproduction and sexual reproduction.
-          </p>
-          <Element name="mitosis" initialValue={mitosis_value} />
-          <button onClick={() => setmitosisValue(mitosis_value + 1)}>
-            Increase mitosis
-          </button>
-          <button onClick={() => setmitosisValue(mitosis_value - 1)}>
-            Decrease mitosis
-          </button>
-          <h3>Is this planet close to the sun?</h3>
-          <Element
-            name="Distance To The Sun"
-            initialValue={Dist_value ? "Close" : "Far"}
-          />
-          <button onClick={() => setDistValue(true)}>Close</button>
-          <button onClick={() => setDistValue(false)}>Far</button>
-          <h3>Does this planet have high gravity planet around?</h3>
-          <Element
-            name="High Gravity Planet Around"
-            initialValue={Gravity_value ? "Yes" : "No"}
-          />
-          <button onClick={() => setGravityValue(true)}>Yes</button>
-          <button onClick={() => setGravityValue(false)}>No</button>
-          <form>
-            <label>
+            <input
+              type="text"
+              className="form-control"
+              id="formUniverseNameInput"
+              value={Universe_name}
+              onChange={(e) => setUniverseName(e.target.value)}
+              placeholder="universe name placeholder"
+            />
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formCO2Input" className="form-label orange-text">
+              Modify CO2 level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              Carbon dioxide generated from ancient volcano warms this planet.
+              And further generate Ozone layer to protect life.
+            </div>
+            <Element id="formCO2Input" name="CO2" initialValue={N_value} />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setNValue(N_value + 1)}
+              >
+                Increase CO2
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setNValue(N_value - 1)}
+              >
+                Decrease CO2
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formAAInput" className="form-label orange-text">
+              Modify Amino Acid level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              Atoms react with moleculars to form the amino acid, as an organic
+              compunds, amino acid combined together to form protein.
+            </div>
+            <Element
+              id="formAAInput"
+              name="Amino Acid"
+              initialValue={O_value}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setOValue(O_value + 1)}
+              >
+                Increase Amino Acid
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setOValue(O_value - 1)}
+              >
+                Decrease Amino Acid
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formNucInput" className="form-label orange-text">
+              Modify Nucleotide level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              Nucleotide is the keystone element to construct DNA and RNA,
+              ususally formed at prebiotic soup step.
+            </div>
+            <Element
+              id="formNucInput"
+              name="Nucleotide"
+              initialValue={Cell_value}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setCellValue(Cell_value + 1)}
+              >
+                Increase Nucleotide
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setCellValue(Cell_value - 1)}
+              >
+                Decrease Nucleotide
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formNucleusInput" className="form-label orange-text">
+              Modify Nucleus level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              The nucleus is a unique cell structure of eukaryotic cells. The
+              DNA inside the nucleus is complexed with various proteins and a
+              small amount of mRNA to form chromatin.
+            </div>
+            <Element
+              id="formNucleusInput"
+              name="nucleus"
+              initialValue={Nucleus_value}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setNucleusValue(Nucleus_value + 1)}
+              >
+                Increase Nucleus
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setNucleusValue(Nucleus_value - 1)}
+              >
+                Decrease Nucleus
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formMitInput" className="form-label orange-text">
+              Modify Mitochondria level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              Mitochondria are the main site of cellular aerobic respiration.
+            </div>
+            <Element
+              id="formMitInput"
+              name="mitochondria"
+              initialValue={mitochondria_value}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setmitochondriaValue(mitochondria_value + 1)}
+              >
+                Increase mitochondria
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setmitochondriaValue(mitochondria_value - 1)}
+              >
+                Decrease mitochondria
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formMitoInput" className="form-label orange-text">
+              Modify Mitosis level:
+            </label>
+            <div className="alert alert-dark text" role="alert">
+              Mitosis is the mechanism for cells to reproduce, the two mitosis
+              are asexual reproduction and sexual reproduction.
+            </div>
+            <Element
+              id="formMitoInput"
+              name="mitosis"
+              initialValue={mitosis_value}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setmitosisValue(mitosis_value + 1)}
+              >
+                Increase mitosis
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setmitosisValue(mitosis_value - 1)}
+              >
+                Decrease mitosis
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formCloseInput" className="form-label orange-text">
+              Is this planet close to the sun?
+            </label>
+            <Element
+              id="formCloseInput"
+              name="Distance To The Sun"
+              initialValue={Dist_value ? "Close" : "Far"}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setDistValue(true)}
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setDistValue(false)}
+              >
+                Far
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label for="formGravInput" className="form-label orange-text">
+              Does this planet have high gravity planet around?
+            </label>
+            <Element
+              id="formGravInput"
+              name="High Gravity Planet Around"
+              initialValue={Gravity_value ? "Yes" : "No"}
+            />
+            <div
+              className="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => setGravityValue(true)}
+              >
+                Yes
+              </button>
+              <button
+                type="button"
+                className="btn btn-dark"
+                onClick={() => setGravityValue(false)}
+              >
+                No
+              </button>
+            </div>
+          </div>
+
+          <div className="mb-3 box">
+            <label
+              for="formBuilderNameInput"
+              className="form-label orange-text"
+            >
               Enter builder name:
-              <input
-                type="text"
-                value={Builder_name}
-                onChange={(e) => setBuilderName(e.target.value)}
-              />
             </label>
-          </form>
+            <input
+              type="text"
+              className="form-control"
+              id="formBuilderNameInput"
+              value={Builder_name}
+              onChange={(e) => setBuilderName(e.target.value)}
+              placeholder="your name placeholder"
+            />
+          </div>
+
           <div>
             <button
+              type="button"
+              className="btn btn-success"
               onClick={() =>
                 handleBuild(
                   N_value,
@@ -244,6 +446,8 @@ function BuildPage() {
             </button>
 
             <button
+              type="button"
+              className="btn btn-info"
               onClick={() =>
                 handleUpdate(
                   N_value,
@@ -262,7 +466,11 @@ function BuildPage() {
               Update
             </button>
 
-            <button onClick={() => handleDelete(Universe_name, Builder_name)}>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => handleDelete(Universe_name, Builder_name)}
+            >
               Delete
             </button>
           </div>

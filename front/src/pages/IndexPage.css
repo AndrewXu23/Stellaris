@@ -14,4 +14,10 @@
     background-repeat: no-repeat;
     color: #fff;
     padding-top: 20%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.yellowtext {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
 }

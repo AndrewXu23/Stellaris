@@ -4,6 +4,7 @@ import BasePage from "./BasePage.js";
 import List from "../components/List.js";
 import Builders from "../components/Builders.js";
 import MyImage from "../images/final.jpeg";
+import "./ListPage.css";
 
 function ListPage() {
   return (
@@ -12,11 +13,11 @@ function ListPage() {
         <img src={MyImage} alt="example" />
       </div>
       <div className="ListPage">
-        <h1>Universes List (Check out your result with planets above!)</h1>
+        <h2>🌏 Planet List (Check out your result with planets or satellites above!)☄️</h2>
         <List />
       </div>
       <div className="BuilderPage">
-        <h1>Builders List</h1>
+        <h2>🌟 God Among Us 🔨</h2>
         <Builders />
       </div>
     </BasePage>

@@ -1,0 +1,21 @@
+h1 {
+    font-family: 'Rubik Spray Paint', cursive;
+    color: #000000;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.BuildForm{
+    font-family: 'Roboto', sans-serif;
+}
+
+.orange-text {
+    color: #000000;
+}
+
+.box {
+    border: 2px solid black;
+    margin: 20px;
+}

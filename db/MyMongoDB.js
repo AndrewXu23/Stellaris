@@ -9,9 +9,7 @@ import { MongoClient } from "mongodb";
 
 function MyMongoDB() {
   const myDB = {};
-  const url =
-    process.env.ATLAS_URI ||
-    "mongodb+srv://kelly:QUKGeA3kxOndEb62@cluster0.aknyknz.mongodb.net/?retryWrites=true&w=majority";
+  const url = process.env.ATLAS_URI;
   const DB_NAME = "project3";
   const DON_COL_NAME = "universe";
 

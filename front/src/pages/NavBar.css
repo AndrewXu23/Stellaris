@@ -7,7 +7,18 @@
 
 .NavBar{
     background-image: url("../images/image0.gif");
+    background-color: #004BAD;
     background-size: "cover";
     background-repeat: no-repeat;
     padding: 0 !important;
+}
+
+.navbar-brand{
+    font-family: 'Rubik Spray Paint', cursive;
+    color: #0034AD;
+}
+
+.nav-item-font{
+    font-family: 'Roboto', sans-serif;
+    color: #0034AD;
 }

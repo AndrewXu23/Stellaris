@@ -4,12 +4,12 @@ import "./Element.css";
 
 function Element({ name, initialValue }) {
   return (
-    <div className="element">
+    <table class="table-info">
       <tr>
         <td>{name}:</td>
         <td>{initialValue}</td>
       </tr>
-    </div>
+    </table>
   );
 }
 
